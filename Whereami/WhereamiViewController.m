@@ -18,6 +18,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    locationManager = [[CLLocationManager alloc]init];
+    
+    [locationManager setDelegate:self];
+    
+    // use best accuracy
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    // start looking for location immediately
+    [locationManager startUpdatingHeading];
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,5 +35,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//// this is deprecated
+//-(void)locationManager:(CLLocationMAnager *) manager
+//   didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    NSLog(@"%@",newLocation);
+//}
+
+-(void)locationManager:(CLLocationMAnager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations objectAtIndex:0];
+    
+    NSLog(@"%@", [location description]);
+}
+
+-(void) locationManager:(CLLocationMAnager *) manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Cound not find the location %@", [error localizedDescription]);
+}
+
+
 
 @end

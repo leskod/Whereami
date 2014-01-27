@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface WhereamiViewController : UIViewController
+
+@interface WhereamiViewController : UIViewController <CLLocationManagerDelegate>
+//<> says i confirm to the protocol
+{
+    CLLocationManager *locationManager;
+}
 
 @end
