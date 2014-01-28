@@ -21,7 +21,10 @@
     
     NSLog(@"in viewDidLoad");
     
+    
     locationManager = [[CLLocationManager alloc]init];
+    
+    //[self doSomethingWeird];
     
     [locationManager setDelegate:self];
     
@@ -29,8 +32,22 @@
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     // start looking for location immediately
-    //[locationManager startUpdatingHeading];
+    // locationManager continues to send updates to me
     [locationManager startUpdatingLocation];
+    
+    // set filter to 50 meters
+    [locationManager setDistanceFilter:50];
+    
+    //if ([locationManager headingAvailable])
+    if([CLLocationManager headingAvailable])
+    {
+        [locationManager startUpdatingHeading];
+    }
+    else{
+        //http://stackoverflow.com/questions/8059725/ios-simulator-and-xcode-to-simulate-compass
+        NSLog(@"no compass in simulator");
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +55,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//-(void)doSomethingWeird
+//{
+//    NSLog(@"Line 1");
+//    NSLog(@"Line 2");
+//    NSLog(@"Line 3");
+//}
 
 //// this is deprecated
 //-(void)locationManager:(CLLocationManager *) manager
@@ -49,13 +73,26 @@
 //}
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+-(void)locationManager:(CLLocationManager *)manager
+    didUpdateLocations:(NSArray *)locations
 {
-    NSLog(@"in locationManager");
+    NSLog(@"in didUpdateLocations");
     
     CLLocation *location = [locations objectAtIndex:0];
     
     NSLog(@"%@", [location description]);
+}
+
+-(void)locationManager:(CLLocationManager *)manager
+    didUpdateHeading:(CLHeading *)newHeading
+{
+    NSLog(@"in didUpdateHeading");
+    
+    //CLLocation *location = [locations objectAtIndex:0];
+    
+    //never get here
+    NSLog(@"Heading Is:  %@", [newHeading description]);
+    NSLog(@"Heading Is:  %@", newHeading);
 }
 
 -(void) locationManager:(CLLocationManager *) manager didFailWithError:(NSError *)error
