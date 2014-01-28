@@ -19,6 +19,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    NSLog(@"in viewDidLoad");
+    
     locationManager = [[CLLocationManager alloc]init];
     
     [locationManager setDelegate:self];
@@ -43,14 +45,17 @@
 //    NSLog(@"%@",newLocation);
 //}
 
--(void)locationManager:(CLLocationMAnager *)manager didUpdateLocations:(NSArray *)locations
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    NSLog(@"in locationManager");
+    
     CLLocation *location = [locations objectAtIndex:0];
     
     NSLog(@"%@", [location description]);
 }
 
--(void) locationManager:(CLLocationMAnager *) manager didFailWithError:(NSError *)error
+-(void) locationManager:(CLLocationManager *) manager didFailWithError:(NSError *)error
 {
     NSLog(@"Cound not find the location %@", [error localizedDescription]);
 }
