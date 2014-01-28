@@ -29,7 +29,8 @@
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     // start looking for location immediately
-    [locationManager startUpdatingHeading];
+    //[locationManager startUpdatingHeading];
+    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,9 +40,11 @@
 }
 
 //// this is deprecated
-//-(void)locationManager:(CLLocationMAnager *) manager
+//-(void)locationManager:(CLLocationManager *) manager
 //   didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 //{
+//    NSLog(@"in the deprecated method");
+//    
 //    NSLog(@"%@",newLocation);
 //}
 
@@ -58,6 +61,12 @@
 -(void) locationManager:(CLLocationManager *) manager didFailWithError:(NSError *)error
 {
     NSLog(@"Cound not find the location %@", [error localizedDescription]);
+}
+
+-(void)dealloc
+{
+    // tell the location manager to stop sending us messages
+    [locationManager setDelegate:nil];
 }
 
 
