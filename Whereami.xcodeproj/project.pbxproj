@@ -22,6 +22,8 @@
 		0160798B1896F6C000A3BB0A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016079891896F6C000A3BB0A /* InfoPlist.strings */; };
 		0160798D1896F6C000A3BB0A /* WhereamiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160798C1896F6C000A3BB0A /* WhereamiTests.m */; };
 		016079971896F77300A3BB0A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016079961896F77300A3BB0A /* CoreLocation.framework */; };
+		01F342951899900E00AED4D8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F342941899900E00AED4D8 /* MapKit.framework */; };
+		01F3429818999BA500AED4D8 /* BNRMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3429718999BA500AED4D8 /* BNRMapPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		0160798A1896F6C000A3BB0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0160798C1896F6C000A3BB0A /* WhereamiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereamiTests.m; sourceTree = "<group>"; };
 		016079961896F77300A3BB0A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		01F342941899900E00AED4D8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		01F3429618999BA500AED4D8 /* BNRMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRMapPoint.h; sourceTree = "<group>"; };
+		01F3429718999BA500AED4D8 /* BNRMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRMapPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F342951899900E00AED4D8 /* MapKit.framework in Frameworks */,
 				016079971896F77300A3BB0A /* CoreLocation.framework in Frameworks */,
 				016079641896F6C000A3BB0A /* CoreGraphics.framework in Frameworks */,
 				016079661896F6C000A3BB0A /* UIKit.framework in Frameworks */,
@@ -104,6 +110,7 @@
 		016079601896F6C000A3BB0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01F342941899900E00AED4D8 /* MapKit.framework */,
 				016079961896F77300A3BB0A /* CoreLocation.framework */,
 				016079611896F6C000A3BB0A /* Foundation.framework */,
 				016079631896F6C000A3BB0A /* CoreGraphics.framework */,
@@ -121,6 +128,8 @@
 				016079731896F6C000A3BB0A /* Main.storyboard */,
 				016079761896F6C000A3BB0A /* WhereamiViewController.h */,
 				016079771896F6C000A3BB0A /* WhereamiViewController.m */,
+				01F3429618999BA500AED4D8 /* BNRMapPoint.h */,
+				01F3429718999BA500AED4D8 /* BNRMapPoint.m */,
 				016079791896F6C000A3BB0A /* Images.xcassets */,
 				016079681896F6C000A3BB0A /* Supporting Files */,
 			);
@@ -256,6 +265,7 @@
 			files = (
 				016079721896F6C000A3BB0A /* WhereamiAppDelegate.m in Sources */,
 				0160796E1896F6C000A3BB0A /* main.m in Sources */,
+				01F3429818999BA500AED4D8 /* BNRMapPoint.m in Sources */,
 				016079781896F6C000A3BB0A /* WhereamiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +475,7 @@
 				016079921896F6C000A3BB0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		016079931896F6C000A3BB0A /* Build configuration list for PBXNativeTarget "WhereamiTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +484,7 @@
 				016079951896F6C000A3BB0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
