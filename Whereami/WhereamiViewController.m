@@ -133,6 +133,8 @@
     CLLocationCoordinate2D loc = [userLocation coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
     [worldView setRegion:region animated:YES];
+    //[worldView setMapType:MKMapTypeStandard];
+    [worldView setMapType:MKMapTypeSatellite];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
