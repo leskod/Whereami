@@ -33,15 +33,28 @@
                                 </connections>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lyV-od-yj6">
-                                <rect key="frame" x="150" y="58" width="20" height="20"/>
+                                <rect key="frame" x="150" y="94" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="84D-Ts-Mdh">
+                                <rect key="frame" x="20" y="58" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlChange:" destination="vXZ-lx-hvc" eventType="valueChanged" id="o6w-DS-gvp"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="lyV-od-yj6" id="KcV-4V-LCM"/>
                         <outlet property="locationTitleField" destination="16n-up-NFb" id="sEj-N5-RPR"/>
+                        <outlet property="segmentedControl" destination="84D-Ts-Mdh" id="8m0-e8-8qg"/>
                         <outlet property="worldView" destination="z2A-ij-Hru" id="K5h-zp-JF5"/>
                     </connections>
                 </viewController>

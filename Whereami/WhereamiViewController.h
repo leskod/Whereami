@@ -20,7 +20,10 @@
     IBOutlet MKMapView *worldView;
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITextField *locationTitleField;
+    IBOutlet UISegmentedControl *segmentedControl;
+    
 }
+- (IBAction)segmentedControlChange:(id)sender;
 
 //-(void)doSomethingWeird;
 

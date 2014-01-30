@@ -22,6 +22,8 @@
     
     NSLog(@"in viewDidLoad");
     
+    [segmentedControl setBackgroundColor:[UIColor whiteColor]];
+    
     
     locationManager = [[CLLocationManager alloc]init];
     
@@ -134,7 +136,19 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
     [worldView setRegion:region animated:YES];
     //[worldView setMapType:MKMapTypeStandard];
-    [worldView setMapType:MKMapTypeSatellite];
+    //[worldView setMapType:MKMapTypeSatellite];
+    
+    NSLog(@"selected index:  %d", [segmentedControl selectedSegmentIndex]);
+    
+//    if ([segmentedControl selectedSegmentIndex] == 0){
+//        [worldView setMapType:MKMapTypeStandard];
+//    } else if ([segmentedControl selectedSegmentIndex] == 1) {
+//        [worldView setMapType:MKMapTypeSatellite];
+//    } else if ([segmentedControl selectedSegmentIndex] == 2) {
+//        [worldView setMapType:MKMapTypeHybrid];
+//    } else {
+//        [worldView setMapType:MKMapTypeStandard];
+//    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -176,4 +190,15 @@
     [locationManager stopUpdatingLocation];
 }
 
+- (IBAction)segmentedControlChange:(id)sender {
+    if ([segmentedControl selectedSegmentIndex] == 0){
+        [worldView setMapType:MKMapTypeStandard];
+    } else if ([segmentedControl selectedSegmentIndex] == 1) {
+        [worldView setMapType:MKMapTypeSatellite];
+    } else if ([segmentedControl selectedSegmentIndex] == 2) {
+        [worldView setMapType:MKMapTypeHybrid];
+    } else {
+        [worldView setMapType:MKMapTypeStandard];
+    }
+}
 @end
